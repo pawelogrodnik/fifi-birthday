@@ -1,18 +1,19 @@
 import * as React from "react";
 import "./card.scss";
+import dinus from "./dinusv2.jpg";
 
 const TYPES = {
-  DZIADKI_OG: "/vo",
-  DZIADKI_SZ: "/vs",
-  K: "/vk",
-  J: "/vj",
+  DZIADKI_OG: "?vo",
+  DZIADKI_SZ: "?vs",
+  K: "?vk",
+  J: "?vj",
 };
 
 const Card = ({ type }) => (
   <div className="card">
     <div className="imgBox">
       <div className="bark"></div>
-      <img src="dinusv2.jpg" />
+      <img src={dinus} alt="Urodzinowy dinuś" />
       <h4 className="color1 imgBox__title">Zaproszenie!</h4>
     </div>
 

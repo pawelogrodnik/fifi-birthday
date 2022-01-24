@@ -4,13 +4,14 @@ import Loader from "./loader";
 import Card from "./card";
 import { useLocation } from "react-router-dom";
 
-const Main = () => {
+const Main = ({ pathz }) => {
   const [isLoaderVisible, setLoaderVisibility] = React.useState(true);
   React.useEffect(() => {
+    console.log(pathz);
     startLoaderTimer();
   }, []);
   const location = useLocation();
-
+  console.log(location);
   const startLoaderTimer = () => {
     setTimeout(() => {
       setLoaderVisibility(false);
@@ -18,7 +19,7 @@ const Main = () => {
   };
   return (
     <div className="main-app">
-      {isLoaderVisible ? <Loader /> : <Card type={location.pathname} />}
+      {isLoaderVisible ? <Loader /> : <Card type={location.search} />}
     </div>
   );
 };
